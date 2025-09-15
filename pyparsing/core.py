@@ -931,7 +931,8 @@ class ParserElement(ABC):
             if self.mayIndexError or pre_loc >= len_instring:
                 try:
                     loc, tokens = self.parseImpl(instring, pre_loc, do_actions)
-                except IndexError:
+                except IndexError as ie:
+                    ie.__traceback__ = None
                     raise ParseException(instring, len_instring, self.errmsg, self)
             else:
                 loc, tokens = self.parseImpl(instring, pre_loc, do_actions)
@@ -4756,6 +4757,7 @@ class MatchFirst(ParseExpression):
                 pfe.parser_element = e
                 raise
             except ParseException as err:
+                err.__traceback__ = None
                 if err.loc > maxExcLoc:
                     maxException = err
                     maxExcLoc = err.loc
