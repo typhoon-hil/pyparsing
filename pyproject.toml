@@ -3,8 +3,8 @@ requires = ["flit_core >=3.2,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "pyparsing"
-authors = [{name = "Paul McGuire", email = "ptmcg.gm+pyparsing@gmail.com"}]
+name = "pyparsing-typhoon"
+authors = [{name = "Typhoon HIL, Inc", email = "office@typhoon-hil.com"}]
 readme = "README.rst"
 license = "MIT"
 dynamic = ["version", "description"]
@@ -37,7 +37,7 @@ diagrams = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/pyparsing/pyparsing/"
+Homepage = "https://github.com/typhoon-hil/pyparsing"
 
 [tool.flit.sdist]
 include = [
